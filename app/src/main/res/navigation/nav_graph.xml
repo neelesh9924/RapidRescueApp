@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.hoest.rapidrescue_irs.splashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_enterPhoneNumber"
+            app:destination="@id/enterPhoneNumber"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_userHomepage"
+            app:destination="@id/userHomepage"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/userHomepage"
+        android:name="com.hoest.rapidrescue_irs.userHomepage"
+        android:label="fragment_user_homepage"
+        tools:layout="@layout/fragment_user_homepage" >
+        <action
+            android:id="@+id/action_userHomepage_to_userNotifications"
+            app:destination="@id/userNotifications" />
+        <action
+            android:id="@+id/action_userHomepage_to_userIncidentStatus"
+            app:destination="@id/userIncidentStatus" />
+        <action
+            android:id="@+id/action_userHomepage_to_userReportIncident"
+            app:destination="@id/userReportIncident" />
+        <action
+            android:id="@+id/action_userHomepage_to_profileOptions"
+            app:destination="@id/profileOptions" />
+    </fragment>
+    <fragment
+        android:id="@+id/userNotifications"
+        android:name="com.hoest.rapidrescue_irs.userNotifications"
+        android:label="fragment_user_notifications"
+        tools:layout="@layout/fragment_user_notifications" />
+    <fragment
+        android:id="@+id/userIncidentStatus"
+        android:name="com.hoest.rapidrescue_irs.userIncidentStatus"
+        android:label="fragment_user_incident_status"
+        tools:layout="@layout/fragment_user_incident_status" />
+    <fragment
+        android:id="@+id/enterPhoneNumber"
+        android:name="com.hoest.rapidrescue_irs.enterPhoneNumber"
+        android:label="fragment_enter_phone_number"
+        tools:layout="@layout/fragment_enter_phone_number" >
+        <action
+            android:id="@+id/action_enterPhoneNumber_to_enterOtp"
+            app:destination="@id/enterOtp" />
+        <action
+            android:id="@+id/action_enterPhoneNumber_to_adminLogin"
+            app:destination="@id/adminLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterOtp"
+        android:name="com.hoest.rapidrescue_irs.enterOtp"
+        android:label="fragment_enter_otp"
+        tools:layout="@layout/fragment_enter_otp" >
+        <action
+            android:id="@+id/action_enterOtp_to_registerNewUserDetails"
+            app:destination="@id/registerNewUserDetails"
+            app:popUpTo="@id/enterPhoneNumber"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_enterOtp_to_userHomepage"
+            app:destination="@id/userHomepage"
+            app:popUpTo="@id/enterPhoneNumber"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerNewUserDetails"
+        android:name="com.hoest.rapidrescue_irs.registerNewUserDetails"
+        android:label="fragment_register_new_user_details"
+        tools:layout="@layout/fragment_register_new_user_details" >
+        <action
+            android:id="@+id/action_registerNewUserDetails_to_userHomepage"
+            app:destination="@id/userHomepage"
+            app:popUpTo="@id/registerNewUserDetails"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/userReportIncident"
+        android:name="com.hoest.rapidrescue_irs.userReportIncident"
+        android:label="fragment_user_report_incident"
+        tools:layout="@layout/fragment_user_report_incident" />
+    <fragment
+        android:id="@+id/adminLogin"
+        android:name="com.hoest.rapidrescue_irs.adminLogin"
+        android:label="fragment_admin_login"
+        tools:layout="@layout/fragment_admin_login" >
+        <action
+            android:id="@+id/action_adminLogin_to_adminDashboard"
+            app:destination="@id/adminDashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminDashboard"
+        android:name="com.hoest.rapidrescue_irs.adminDashboard"
+        android:label="fragment_admin_dashboard"
+        tools:layout="@layout/fragment_admin_dashboard" />
+    <fragment
+        android:id="@+id/profileOptions"
+        android:name="com.hoest.rapidrescue_irs.profileOptions"
+        android:label="fragment_profile_options"
+        tools:layout="@layout/fragment_profile_options" />
+    <fragment
+        android:id="@+id/viewIncident"
+        android:name="com.hoest.rapidrescue_irs.viewIncident"
+        android:label="fragment_view_incident"
+        tools:layout="@layout/fragment_view_incident" />
+    <action
+        android:id="@+id/action_global_viewIncident"
+        app:destination="@id/viewIncident" />
+    <fragment
+        android:id="@+id/viewImage"
+        android:name="com.hoest.rapidrescue_irs.viewImage"
+        android:label="fragment_view_image"
+        tools:layout="@layout/fragment_view_image" >
+        <argument android:name="photoUrl" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_viewImage"
+        app:destination="@id/viewImage" />
+</navigation>

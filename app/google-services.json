@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "393519785088",
+    "project_id": "rapid-rescue-e357f",
+    "storage_bucket": "rapid-rescue-e357f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393519785088:android:93a466c822782f30167265",
+        "android_client_info": {
+          "package_name": "com.hoest.rapidrescue_irs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393519785088-pnahtpgb6k0dhvs5mkjcroqh5bh12afg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hoest.rapidrescue_irs",
+            "certificate_hash": "6f6e6d0630beea754606e630fa63847cf093d34b"
+          }
+        },
+        {
+          "client_id": "393519785088-6e98b9g4pe30jk12m3jfhc15ljug1ufg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGolyXC9fKcig7L17mFg59lDShGEtQ65w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393519785088-6e98b9g4pe30jk12m3jfhc15ljug1ufg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

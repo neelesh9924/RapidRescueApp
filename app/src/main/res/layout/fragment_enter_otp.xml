@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".enterOtp">
+
+
+    <TextView
+        android:id="@+id/tempTitle"
+        style="@style/H5_bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin_end"
+        android:text="Enter the OTP sent to your phone number"
+        android:textColor="@color/red_300"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/default_margin_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userNameTopProfileOptions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="Enter the 6 digit OTP sent to your phone number"
+        android:textAppearance="@style/sub_2"
+        app:layout_constraintEnd_toEndOf="@+id/tempTitle"
+        app:layout_constraintStart_toStartOf="@+id/tempTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tempTitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enterOTPLayout"
+        style="@style/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/default_margin_end"
+        android:hint="One Time Password"
+        android:maxWidth="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tempTitle"
+        app:layout_constraintTop_toBottomOf="@+id/userNameTopProfileOptions"
+        app:startIconDrawable="@drawable/ic_phone_icon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterOTPEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:maxLength="6" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/otpPageContinueButton"
+        style="@style/ButtonFilled_primary"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/default_margin_top"
+        android:text="Continue"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/enterOTPLayout"
+        app:layout_constraintStart_toStartOf="@+id/enterOTPLayout"
+        app:layout_constraintTop_toBottomOf="@+id/enterOTPLayout" />
+
+    <TextView
+        android:id="@+id/textView12w"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="50dp"
+        android:text="Didn't receive any code?"
+        android:textAppearance="@style/sub_2"
+        app:layout_constraintEnd_toEndOf="@+id/tempTitle"
+        app:layout_constraintStart_toStartOf="@+id/tempTitle"
+        app:layout_constraintTop_toBottomOf="@+id/otpPageContinueButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resendOtpButton"
+        style="@style/textButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend OTP"
+        android:textAllCaps="false"
+        android:textColor="@color/red_300"
+        app:layout_constraintStart_toStartOf="@+id/otpPageContinueButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView12w" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
