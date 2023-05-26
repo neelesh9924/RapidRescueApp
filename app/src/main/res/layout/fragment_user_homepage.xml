@@ -228,7 +228,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/car_crash_fill0_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
 
                 <com.google.android.material.button.MaterialButton
@@ -242,7 +242,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/local_police_fill0_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
 
                 <com.google.android.material.button.MaterialButton
@@ -256,7 +256,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/local_fire_department_fill0_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/ambulanceButton"
@@ -269,7 +269,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/health_and_safety_fill0_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
 
                 <com.google.android.material.button.MaterialButton
@@ -283,7 +283,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/pool_fill1_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
 
                 <com.google.android.material.button.MaterialButton
@@ -297,7 +297,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/female_fill0_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
 
                 <com.google.android.material.button.MaterialButton
@@ -311,7 +311,7 @@
                     android:textAppearance="@style/H6_bold"
                     app:icon="@drawable/child_care_fill0_wght400_grad0_opsz24"
                     app:iconGravity="textStart"
-                    app:iconSize="40dp"
+                    app:iconSize="30dp"
                     app:iconTint="@color/white" />
 
 

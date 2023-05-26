@@ -3,6 +3,7 @@ package com.hoest.rapidrescue_irs;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -33,9 +35,20 @@ public class userHomepage extends Fragment {
       FragmentUserHomepageBinding binding;
       NavController mNavController;
 
+      private String userSelectedNumber="";
 
 
 
+      private ActivityResultLauncher<String> requestPhoneCallLauncher =
+              registerForActivityResult(new ActivityResultContracts.RequestPermission(), result -> {
+                    if (result) {
+                          // Permission granted, start the phone call
+                          makePhoneCall(userSelectedNumber);
+                    } else {
+                          // Permission denied
+                          Toast.makeText(getActivity(), "Phone call permission denied", Toast.LENGTH_SHORT).show();
+                    }
+              });
 
       @Override
       public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,9 +116,28 @@ public class userHomepage extends Fragment {
       }
 
       private void makePhoneCall(String phoneNumber) {
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:" + phoneNumber));
-            startActivity(intent);
+            userSelectedNumber=phoneNumber;
+
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext());
+            builder.setTitle("Call Emergency number");
+            builder.setMessage("Are you sure you want to call this number?");
+            builder.setPositiveButton("Yes", (dialogInterface, i) -> {
+                  Intent intent = new Intent(Intent.ACTION_CALL);
+                  intent.setData(Uri.parse("tel:" + phoneNumber));
+
+                  if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                        startActivity(intent);
+                  } else {
+                        // Request permission to make a phone call
+                        requestPhoneCallLauncher.launch(android.Manifest.permission.CALL_PHONE);
+                  }
+
+            });
+
+            builder.setNegativeButton("No", (dialogInterface, i) -> dialogInterface.dismiss());
+
+            builder.show();
+
       }
 
       private void getUserProfile() {
